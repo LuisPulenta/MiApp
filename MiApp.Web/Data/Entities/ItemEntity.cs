@@ -27,5 +27,10 @@ namespace MiApp.Web.Data.Entities
         [Display(Name = "Precio")]
         [Required(ErrorMessage = "El campo {0} es requerido.")]
         public double Price { get; set; }
+
+        public string LogoFullPath => string.IsNullOrEmpty(LogoPath)
+           ? "noimage"//null
+           : $"http://keypress.serveftp.net:88/MiAppApi{LogoPath.Substring(1)}";
+
     }
 }
