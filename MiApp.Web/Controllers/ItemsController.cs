@@ -9,9 +9,11 @@ using MiApp.Web.Data;
 using MiApp.Web.Data.Entities;
 using MiApp.Web.Helpers;
 using MiApp.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MiApp.Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ItemsController : Controller
     {
         private readonly DataContext _context;

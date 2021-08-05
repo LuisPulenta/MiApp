@@ -5,5 +5,8 @@ namespace MiApp.Web.Helpers
 {
     public interface ICombosHelper
     {
-        IEnumerable<SelectListItem> GetComboTeams();
+        IEnumerable<SelectListItem> GetComboItems();
+
+        IEnumerable<SelectListItem> GetComboUserTypes();
     }
+}

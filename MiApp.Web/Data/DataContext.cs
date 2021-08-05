@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MiApp.Web.Data.Entities;
 
 namespace MiApp.Web.Data
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<UserEntity>
     {
 
         #region Constructor
@@ -13,6 +14,9 @@ namespace MiApp.Web.Data
         #endregion
 
         public DbSet<ItemEntity> Items { get; set; }
+        public DbSet<VersionEntity> Versions { get; set; }
+        public DbSet<AppUserEntity> AppUsers { get; set; }
+        public DbSet<ManagerEntity> Managers { get; set; }
 
 
         //Clave Unica para campo Name
